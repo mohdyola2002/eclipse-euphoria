@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <script src="./assets/libs/bootstrap/dist/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Eclipse · Euphoria</title>
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="./assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="house-door-fill" viewBox="0 0 16 16">
+            <path
+                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z">
+            </path>
+        </symbol>
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path
+                d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+        </symbol>
+        <symbol id="cart" viewBox="0 0 16 16">
+            <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </symbol>
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </symbol>
+    </svg>
+
+    <nav class="navbar navbar-expand-md bg-black sticky-top border-bottom" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand d-md-none" href="/">
+                <img src="assets/images/logo-dark.png" height="24" alt="Logo">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                aria-controls="#offcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="#offcanvas" aria-labelledby="#offcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="#offcanvasLabel">Eclipse Euphoria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <li class="nav-item"><a class="nav-link" href="/">
+                                <img src="assets/images/logo-dark.png" height="24" alt="Logo">
+                            </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./history.html">History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Types</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Mechanism</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">How they occur</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="bg-dark text-secondary px-4 py-5 text-center">
+            <div class="py-5">
+                <h1 class="display-5 fw-bold text-white">History of Eclipse</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb p-3 text-light rounded-3 justify-content-center">
+                        <li class="breadcrumb-item">
+                            <a class="link-light" href="#">
+                                <svg class="bi" width="16" height="16">
+                                    <use xlink:href="#house-door-fill"></use>
+                                </svg>
+                                <span class="visually-hidden">Home</span>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a class="link-light fw-semibold text-decoration-none" href="#">History</a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="d-flex align-items-start p-5">
+            <div class="nav flex-column nav-pills me-3 text-start" id="v-pills-tab" role="tablist"
+                aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-intro-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-intro" type="button" role="tab" aria-controls="v-pills-intro"
+                    aria-selected="true">Introduction</button>
+                <button class="nav-link" id="v-pills-history-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-history" type="button" role="tab" aria-controls="v-pills-history"
+                    aria-selected="false">History</button>
+                <button class="nav-link" id="v-pills-science-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-science" type="button" role="tab" aria-controls="v-pills-science"
+                    aria-selected="false">Science</button>
+                <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-education" type="button" role="tab" aria-controls="v-pills-education"
+                    aria-selected="false">Education</button>
+                <button class="nav-link" id="v-pills-reference-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-reference" type="button" role="tab" aria-controls="v-pills-reference"
+                    aria-selected="false">References</button>
+                <button class="nav-link" id="v-pills-quiz-tab" data-bs-toggle="pill" data-bs-target="#v-pills-quiz"
+                    type="button" role="tab" aria-controls="v-pills-quiz" aria-selected="false">Quiz</button>
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-intro" role="tabpanel"
+                    aria-labelledby="v-pills-intro-tab" tabindex="0">
+                    <div class="row featurette px-5">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading fw-normal lh-1">Intro<span
+                                    class="text-body-secondary">duction.</span></h2>
+                            <p class="lead">
+                                Eclipses, an ancient celestial phenomenon, have mesmerized humanity
+                                since time immemorial. As our ancestors gazed at the
+                                skies, they developed diverse interpretations and reactions to these captivating
+                                celestial events.
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                                aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%"
+                                    y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-history" role="tabpanel" aria-labelledby="v-pills-history-tab"
+                    tabindex="0">
+                    <div class="row featurette px-5">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading fw-normal lh-1 mt-0">Historical Interpretations <span
+                                    class="text-body-secondary">and Reactions.</span></h2>
+                            <p class="lead">
+                                <dl>
+                                    <dt>Mythology and Folklore</dt>
+                                    <dd>Ancient civilizations often wove eclipses into their mythologies and folklore. They
+                                        associated eclipses with gods,
+                                        mythical creatures, or symbolic events, attempting to explain the temporary
+                                        disappearance of the Sun or Moon.</dd>
+                                    <dt>Fear and Superstition</dt>
+                                    <dd>In some cultures, eclipses were met with fear and superstition. The sudden darkening
+                                        of the sky could evoke anxiety, and
+                                        people believed that celestial deities were upset or that it was a bad omen
+                                        foretelling disasters.</dd>
+                                    <dt>Cultural Significance</dt>
+                                    <dd>Eclipses held cultural significance in many societies, marking crucial events like
+                                        the changing of rulership, the timing
+                                        of important ceremonies, or agricultural cycles.</dd>
+                                    <dt>Islamic Perspective</dt>
+                                    <dd>In Islam, eclipses are seen as signs from Allah (God) and are mentioned in the
+                                        Qur'an. Believers view eclipses as
+                                        opportunities for spiritual reflection, seeking forgiveness, and strengthening
+                                        faith. Special prayers known as
+                                        Salat-ul-Kusuf (for solar eclipse) and Salat-ul-Khusuf (for lunar eclipse) are
+                                        offered, invoking Allah's mercy and
+                                        blessings during these events</dd>
+                                </dl>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                                aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%"
+                                    y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="v-pills-science" role="tabpanel" aria-labelledby="v-pills-science-tab"
+                    tabindex="0">
+                    <div class="row featurette px-5">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading fw-normal lh-1 mt-0">Scientific Inquiry <span
+                                    class="text-body-secondary">Through the Ages.</span></h2>
+                            <p class="lead">
+                                <dl>
+                                    <dt>Ancient Observations</dt>
+                                    <dd>Early civilizations made observational records of eclipses, recognizing their
+                                        cyclical nature. However, understanding
+                                        the scientific mechanisms behind eclipses emerged over time</dd>
+                                    <dt>Pioneering Astronomers</dt>
+                                    <dd>As humanity advanced in knowledge and the scientific method, astronomers like
+                                        Galileo and Kepler made critical
+                                        observations and calculations to explain the mechanics of eclipses</dd>
+                                    <dt>Modern Scientific Understanding</dt>
+                                    <dd>Today, we comprehend eclipses through physics and astronomy. A solar eclipse occurs
+                                        when the Moon passes between the Sun
+                                        and Earth, blocking the Sun's light, while a lunar eclipse takes place when the
+                                        Earth's shadow covers the Moon</dd>
+                                </dl>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                                aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%"
+                                    y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-education" role="tabpanel" aria-labelledby="v-pills-education-tab"
+                    tabindex="0">
+                    <div class="row featurette px-5">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading fw-normal lh-1 mt-1">Incorporating Interpretations <span
+                                    class="text-body-secondary">into Education.</span></h2>
+                            <p class="lead">
+                                <p>
+                                    By incorporating historical, cultural, and scientific perspectives into education,
+                                    learners gain a deeper appreciation
+                                    for eclipses. Exploring the interplay of mythology, fear, faith, and scientific
+                                    understanding enhances our understanding
+                                    of these awe-inspiring cosmic events.
+                                </p>
+                                <p>Eclipses, an ageless marvel, remind us of the ever-evolving human spirit to understand
+                                    the cosmos, embracing both
+                                    spiritual beliefs and scientific knowledge.</p>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                                aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%"
+                                    y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-reference" role="tabpanel"
+                    aria-labelledby="v-pills-reference-tab" tabindex="0">
+                    <div class="row featurette px-5">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading fw-normal lh-1">Refe<span
+                                    class="text-body-secondary">rences.</span></h2>
+                            <p class="lead">
+                                <ol>
+                                    <li>
+                                        Ancient History Encyclopedia. (2021). Eclipses in Ancient Civilizations.
+                                        <a href="https://www.ancient.eu/article/1082/eclipses-in-ancient-civilizations/" target="_blank">[Link]</a>
+                                    </li>
+                                    <li>
+                                        IslamicFinder. (n.d.). Eclipses in Islam.
+                                        <a href="https://www.islamicfinder.org/news/eclipses-in-islam/">[Link]</a>
+                                    </li>
+                                    <li>
+                                        History. (2021). Eclipse History: Who Discovered Eclipses and When?
+                                        <a href="https://www.history.com/news/who-discovered-eclipses-and-when">[Link]</a>
+                                    </li>
+                                    <li>
+                                        NASA - Eclipse. (n.d.). What Is an Eclipse?
+                                        <a href="https://eclipse.gsfc.nasa.gov/SEhelp/eclipseIntroduction.html">[Link]</a>
+                                    </li>
+                                </ol>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                                aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%"
+                                    y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-quiz" role="tabpanel" aria-labelledby="v-pills-quiz-tab"
+                    tabindex="0">
+                    <div class="row featurette px-5">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading fw-normal lh-1">Intro<span
+                                    class="text-body-secondary">duction.</span></h2>
+                            <p class="lead">
+                                Eclipses, an ancient celestial phenomenon, have mesmerized humanity
+                                since time immemorial. As our ancestors gazed at the
+                                skies, they developed diverse interpretations and reactions to these captivating
+                                celestial events.
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                                aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%"
+                                    y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container pt-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top">
+            <div class="col-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="./assets/images/logo-light.png" alt="Logo" height="30">
+                </a>
+            </div>
+            <div class="col-8 text-end">
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Eclipse Euphoria - NASA SpaceApp Challenge 2023,
+                    Kano</span>
+
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="./assets/libs/bootstrap//dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
